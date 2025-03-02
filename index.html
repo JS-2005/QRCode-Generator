@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 15px;
+            background: #1abc9c;
+        }
+        .main{
+            max-width: 500px;
+            width: 100%;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.1);
+        }
+        .header{
+            height: 120px;
+            background: #16a085;
+            border-radius: 20px 20px 0 0;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content{
+            padding: 25px 35px;
+            display:flex;
+        }
+        #userText {
+            height: 30px;
+            width: 100%;
+            outline: none;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 5px;
+            border: 1px solid lightgrey;
+            font-size: 80%;
+        }
+        #generate{
+            height:30px;
+            color: #fff;
+            font-size: 80%;
+            font-weight: 500;
+            padding: 0px 10px 0px 10px;
+            background: #16a085;
+            border-radius: 5px;
+            border: 1px solid #16a085;
+            cursor: pointer;
+        }
+        .qrcode{
+            margin:10px;
+            width:100%;
+            height: 250px;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+    <body>
+        <div class = "main">
+            <div class = "header">
+                <h1>QR Code Generator</h1>
+            </div>
+            <div class = "content">
+                <input type="text" id="userText" placeholder="Enter somethings ... ">
+                <button id = "generate" onclick="createQR(document.getElementById('userText').value)">Generate</button>
+            </div>
+            <div class="qrcode">
+                <div id="qrimg">
+                    <p> QR code  will generate here </p>
+                </div>
+            </div>
+        </div>
+        <script>
+            // Create a QR code with specific options
+            function createQR(text) {
+                let qrContainer = document.getElementById("qrimg");
+                qrContainer.innerHTML = ""; // Clear previous QR code
+                new QRCode(qrContainer, {
+                    text: text,
+                    width: 200,
+                    height: 200
+                });
+            }
+    
+            // Capture enter keystroke
+            var input = document.getElementById("userText");
+            input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("generate").click();
+            }
+            });
+        </script>
+    </body>
+</html>
