@@ -9,4 +9,4 @@ The code is published through github page.
 
 Browse through:  https://js-2005.github.io/QRCode-Generator/
 
-or click [here] (https://js-2005.github.io/QRCode-Generator/)
+or click [here](https://js-2005.github.io/QRCode-Generator/)
