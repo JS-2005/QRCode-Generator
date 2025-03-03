@@ -7,4 +7,4 @@ This code is made up of HTML, CSS And JavaScript which allow users to generate Q
 
 This code had been published with Github Page. 
 
-Click [here](https://js-2005.github.io/QRCode-Generator/) to visit the site. 
+Click [here](https://js-2005.github.io/QRCode-Generator/) to visit the page. 
