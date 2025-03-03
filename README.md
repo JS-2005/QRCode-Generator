@@ -3,8 +3,8 @@
 This code is made up of HTML, CSS And JavaScript which allow users to generate QR code based on the text entered. 
 
 
-## Website URL 
+## Page URL 
 
-The code is published through github page. 
+This code had been published with Github Page. 
 
 Click [here](https://js-2005.github.io/QRCode-Generator/) to visit the site. 
